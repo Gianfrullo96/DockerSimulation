@@ -1,0 +1,11 @@
+FROM mysql:latest
+
+# Copia lo script SQL nell'immagine Docker
+COPY dump.sql /docker-entrypoint-initdb.d/
+
+# Impostare le variabili dell'ambiente per MySQL
+ENV MYSQL_DATABASE docker_fake_db
+ENV MYSQL_ROOT_PASSWORD Password
+
+
+
